@@ -33,7 +33,7 @@ def batched(iterable, n_cols):
 
 @st.cache_data
 def download_data():
-    dfs = pd.read_excel("./Stock.xlsx", sheet_name=None)
+    dfs = pd.read_excel("./Stock Dashboard.xlsx", sheet_name=None)
 
     history_dfs = {}
     ticker_df = dfs["ticker"].copy(deep=True)
