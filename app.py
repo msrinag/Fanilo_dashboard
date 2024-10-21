@@ -7,11 +7,12 @@ from itertools import islice
 from plotly.subplots import make_subplots
 
 
+
 ##################################################################
 ### Configure App
 ##################################################################
 
-st.set_page_config(page_title="Stocks Dashboard", page_icon="💹", layout="wide")
+st.set_page_config(page_title="Stocks Dashboard", page_icon="📈", layout="wide")
 st.html("styles.html")
 pio.templates.default = "plotly_white"
 
@@ -170,7 +171,7 @@ def filter_symbol_widget():
         "📰 Currently Showing", list(history_dfs.keys())
     )
     selected_period = right_widget.selectbox(
-        "⌚ Period", ("Week", "Month", "Trimester", "Year"), 2
+        "⌚ Period", ("Week", "Month", "Trimester", "Year"), 3
     )
 
     return selected_ticker, selected_period
@@ -224,7 +225,7 @@ def plot_candlestick(history_df):
     return f_candle
 
 
-@st.experimental_fragment
+@st.fragment
 def display_symbol_history(ticker_df, history_dfs):
     selected_ticker, selected_period = filter_symbol_widget()
 
