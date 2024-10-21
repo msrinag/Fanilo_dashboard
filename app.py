@@ -265,8 +265,8 @@ def display_symbol_history(ticker_df, history_dfs):
 
         with st.container():
             st.html('<span class="bottom_indicator"></span>')
-            history_df["Volume"].fillna(0, inplace=True)  # Replace NaN with 0
-            st.metric("Average Daily Volume", f'{int(history_df["Volume"].mean()):,}')
+           
+            st.metric("Average Daily Volume", f'{history_df["Volume"].mean():,}')
             st.metric(
                 "Current Market Cap",
                 "{:,} $".format(
