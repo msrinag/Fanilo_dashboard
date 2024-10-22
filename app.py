@@ -88,6 +88,8 @@ def transform_data(ticker_df, history_dfs):
 
 
 def plot_sparkline(data):
+    print(data)
+    print(type(data))
     fig_spark = go.Figure(
         data=go.Scatter(
             y=data,
